@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FileToPDF — Convert Files to PDF</title>
+    <meta
+        name="description"
+        content="Convert images, documents and other files to high-quality PDF files."
+    >
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+        <div class="container header-inner">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">PDF</span>
+                <span>FileToPDF</span>
+            </a>
+
+            <nav class="navigation">
+                <a href="#converter">Converter</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it works</a>
+            </nav>
+
+            <a href="#converter" class="header-button">
+                Convert now
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Fast & secure PDF converter
+                    </div>
+
+                    <h1>
+                        Convert your files
+                        <span>to PDF</span>
+                    </h1>
+
+                    <p>
+                        Easily convert images, documents and other files
+                        into high-quality PDF files in just a few clicks.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#converter" class="primary-button">
+                            Convert files
+                            <span>→</span>
+                        </a>
+
+                        <a href="#features" class="secondary-button">
+                            Learn more
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <div class="trust-item">
+                            <span>✓</span>
+                            High quality
+                        </div>
+
+                        <div class="trust-item">
+                            <span>✓</span>
+                            Easy to use
+                        </div>
+
+                        <div class="trust-item">
+                            <span>✓</span>
+                            Secure
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero illustration -->
+
+                <div class="hero-visual">
+
+                    <div class="floating-card card-one">
+                        <span class="file-icon image-icon">IMG</span>
+                        <div>
+                            <strong>image.jpg</strong>
+                            <small>2.4 MB</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-two">
+                        <span class="file-icon doc-icon">DOC</span>
+                        <div>
+                            <strong>document.docx</strong>
+                            <small>1.8 MB</small>
+                        </div>
+                    </div>
+
+                    <div class="pdf-preview">
+
+                        <div class="pdf-top">
+                            <span class="pdf-label">PDF</span>
+                            <span class="pdf-dots">•••</span>
+                        </div>
+
+                        <div class="pdf-page">
+
+                            <div class="pdf-line large"></div>
+                            <div class="pdf-line"></div>
+                            <div class="pdf-line short"></div>
+
+                            <div class="pdf-image">
+                                <span>IMAGE</span>
+                            </div>
+
+                            <div class="pdf-line"></div>
+                            <div class="pdf-line short"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONVERTER ================= -->
+
+        <section id="converter" class="converter-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        PDF CONVERTER
+                    </div>
+
+                    <h2>
+                        Turn your files into PDF
+                    </h2>
+
+                    <p>
+                        Upload one or multiple files and convert them
+                        into a high-quality PDF.
+                    </p>
+
+                </div>
+
+
+                <div class="converter-box">
+
+                    <!-- Upload area -->
+
+                    <div
+                        class="upload-area"
+                        id="dropZone"
+                    >
+
+                        <div class="upload-icon">
+                            ↑
+                        </div>
+
+                        <h3>
+                            Drop your files here
+                        </h3>
+
+                        <p>
+                            or click the button below to choose files
+                        </p>
+
+                        <label
+                            for="fileInput"
+                            class="upload-button"
+                        >
+                            Choose files
+                        </label>
+
+                        <input
+                            type="file"
+                            id="fileInput"
+                            multiple
+                            accept="
+                                image/*,
+                                .pdf,
+                                .txt,
+                                .doc,
+                                .docx,
+                                .xls,
+                                .xlsx,
+                                .ppt,
+                                .pptx
+                            "
+                            hidden
+                        >
+
+                        <div class="supported-formats">
+                            JPG · PNG · WEBP · PDF · DOC · DOCX · XLS · XLSX · PPT · PPTX · TXT
+                        </div>
+
+                    </div>
+
+
+                    <!-- File list -->
+
+                    <div
+                        class="file-list"
+                        id="fileList"
+                    ></div>
+
+
+                    <!-- Converter controls -->
+
+                    <div
+                        class="converter-controls"
+                        id="converterControls"
+                        hidden
+                    >
+
+                        <div class="control-group">
+
+                            <label for="pageSize">
+                                Page size
+                            </label>
+
+                            <select id="pageSize">
+
+                                <option value="a4">
+                                    A4
+                                </option>
+
+                                <option value="a3">
+                                    A3
+                                </option>
+
+                                <option value="letter">
+                                    Letter
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <label for="orientation">
+                                Orientation
+                            </label>
+
+                            <select id="orientation">
+
+                                <option value="portrait">
+                                    Portrait
+                                </option>
+
+                                <option value="landscape">
+                                    Landscape
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="control-group">
+
+                            <label for="imageQuality">
+                                Image quality
+                            </label>
+
+                            <select id="imageQuality">
+
+                                <option value="high">
+                                    High quality
+                                </option>
+
+                                <option value="medium">
+                                    Medium
+                                </option>
+
+                                <option value="low">
+                                    Small file size
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Convert button -->
+
+                    <button
+                        class="convert-button"
+                        id="convertButton"
+                        disabled
+                    >
+                        <span>Convert to PDF</span>
+                        <span>→</span>
+                    </button>
+
+
+                    <!-- Progress -->
+
+                    <div
+                        class="progress-container"
+                        id="progressContainer"
+                        hidden
+                    >
+
+                        <div class="progress-info">
+
+                            <span>
+                                Converting files...
+                            </span>
+
+                            <span id="progressPercent">
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                id="progressFill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section
+            id="features"
+            class="features-section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        FEATURES
+                    </div>
+
+                    <h2>
+                        Everything you need
+                    </h2>
+
+                    <p>
+                        A simple and powerful way to create PDF files.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon blue">
+                            ✦
+                        </div>
+
+                        <h3>
+                            High quality
+                        </h3>
+
+                        <p>
+                            Keep your images sharp and clear when
+                            converting them to PDF.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon purple">
+                            ↗
+                        </div>
+
+                        <h3>
+                            Multiple files
+                        </h3>
+
+                        <p>
+                            Upload multiple files and combine them
+                            into one PDF document.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon green">
+                            ✓
+                        </div>
+
+                        <h3>
+                            Easy to use
+                        </h3>
+
+                        <p>
+                            Drag, drop and convert. No complicated
+                            settings are required.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon orange">
+                            🔒
+                        </div>
+
+                        <h3>
+                            Secure
+                        </h3>
+
+                        <p>
+                            Your files are processed safely and
+                            are not stored unnecessarily.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section
+            id="how-it-works"
+            class="steps-section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        HOW IT WORKS
+                    </div>
+
+                    <h2>
+                        Convert files in 3 steps
+                    </h2>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Upload
+                        </h3>
+
+                        <p>
+                            Select your files or drag them
+                            into the upload area.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Customize
+                        </h3>
+
+                        <p>
+                            Choose page size, orientation
+                            and image quality.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Download
+                        </h3>
+
+                        <p>
+                            Convert your files and download
+                            your finished PDF.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-logo">
+
+                <span class="logo-icon">
+                    PDF
+                </span>
+
+                <span>
+                    FileToPDF
+                </span>
+
+            </div>
+
+            <p>
+                © 2026 FileToPDF. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
